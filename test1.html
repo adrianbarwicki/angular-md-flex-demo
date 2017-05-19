@@ -1,0 +1,49 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/node_modules/angular-material/angular-material.min.css">
+  <style>
+      .red {
+          background-color: red;
+      }
+      .blue {
+          background-color: blue;
+      }
+  </style>
+</head>
+<body ng-app="TestApp" ng-cloak>
+    <h1>Test with flex model</h1>
+    <div layout="row">
+        <div flex="20" class="red">
+            [flex="20"]
+        </div>
+        <div flex="80" class="blue">
+            [flex="80"]
+        </div>
+    </div>
+
+    <h1>Test with css styles</h1>
+    <div layout="row">
+            <div style="width:20%" class="red">
+                [flex="20"]
+            </div>
+            <div style="width:80%" class="blue">
+                [flex="80"]
+            </div>
+    </div>
+
+  <script src="/node_modules/angular/angular.min.js"></script>
+  <script src="/node_modules/angular-animate/angular-animate.min.js"></script>
+  <script src="/node_modules/angular-aria/angular-aria.min.js"></script>
+  <script src="/node_modules/angular-messages/angular-messages.min.js"></script>
+
+
+  <script src="/node_modules/angular-material/angular-material.min.js"></script>
+  
+
+  <script type="text/javascript">    
+    angular.module('TestApp', [ 'ngMaterial' ]);
+  </script>
+  
+</body>
+</html>
