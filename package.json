@@ -1,0 +1,25 @@
+{
+  "name": "angular-md-flex-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianbarwicki/angular-md-flex-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianbarwicki/angular-md-flex-demo/issues"
+  },
+  "homepage": "https://github.com/adrianbarwicki/angular-md-flex-demo#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4"
+  }
+}
