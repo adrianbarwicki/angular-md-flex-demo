@@ -89,10 +89,14 @@
 
 ## Edge cases
 
-***NOT OK: test3.html***
-Fixed flex does not work properly in grow column container. Their height are based on screen size, not on parent size.
+### NOT OK: test3.html
+***Scenario:*** Fixed flex contents in grow container.
 
-***NOT OK: test5.html***
+***Chrome (OK):*** The fixed container assumes the x% of the height of the parent content.
+
+***Safari (NOT OK):*** The fixed container does not assume the x% of the height of the parent content. It takes the height of the total screen size.
+
+### NOT OK: test5.html
 Fixed flex containers in fixed flex containers. Their height are based on screen size, not on parent size. Same with test3.html.
 
 ***OK: test5-noflex.html***
