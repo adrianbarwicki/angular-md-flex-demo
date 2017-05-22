@@ -7,7 +7,7 @@
 3. Shrink containers have flex="noshrink" attribute
 4. Every "grow" container with standalone "flex" attribute should have layout-fill
 
-***Constrains / Best practices***
+***Constraints / Best practices***
 
 1. No grow contents in shrink contents
 
@@ -184,7 +184,7 @@ We specify 1 container with height of 50% (or better: not 100%).
 
 In this scenario, there are troubles with Safari and Chrome - Safari seems to ignore the specified 50% and takes the full height and Chrome seems to follow exactly what is specified in the css.
 
-Based on this, we again heuristically propose the following constrain:
+Based on this, we again heuristically propose the following constraint:
 
 ***1. The relative heights of the silbling containers must always add up to 100%.*** <br />
 ***2. Silbling containers must be always of the same type: `shrink | grow | fixed`.***
@@ -200,7 +200,7 @@ Scrollable containers do not work with "row" / horizontal containers
 
 ***OK: test13.html***
 Scrollable containers do work with "column" / vertical containers
-Constrain for children of scrollable containers:
+Constraint for children of scrollable containers:
 ```
 <div layout="column" flex="noshrink" class="red">
     <h1>[3 Test in shrink container]</h1>
