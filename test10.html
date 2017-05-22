@@ -21,23 +21,26 @@
     <!-- WRAPPER GROW CONTAINER 100%-->
     <div layout="column" flex layout-fill>
         <!-- GROW VERTICAL CONTAINER - expected 50% -->
-        
-        <div layout="column" flex layout-fill> 
-            <div layout="column" flex="20" class="red">
-                <h1>[flex="20" in grow container]</h1>
-                <p>
-                    Here the 20% are based on the screen height, not the parent container height.
-                    We expect however that they will be based on the parent element which takes 50% of the screen size, so 10% of the screen size.
-                </p>
+        <div layout="column" flex layout-fill>
+            <div layout="column" style="height:50%" class="red">
+                    <div layout="column" flex class="red">
+                            <h1>[grow in flex fixed container of 50%]</h1>
+                    </div>
+                    <div layout="column" flex class="blue">
+                            <h1>[grow in flex fixed container of 50%]</h1>
+                    </div>
             </div>
-            <div layout="column" flex="80" class="red">
-                <h1>[flex="80" in grow container]</h1>
+            <div layout="column" style="height:30%" class="red">
+                    <h1>[geight="30" in grow container]</h1>
+            </div>
+            <div layout="column" style="height:20%" class="red">
+                    <h1>[height="20" in grow container]</h1>
             </div>
         </div>
 
         <!-- GROW VERTICAL CONTAINER - expected 50% -->
-        <div layout="column" flex class="blue">
-                    <h1>[grow]</h1>
+        <div layout="column" flex class="blue" layout-fill>
+                <h1>[grow]</h1>
         </div>
      </div>
 

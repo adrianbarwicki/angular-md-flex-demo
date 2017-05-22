@@ -20,3 +20,13 @@ Minus of this approach: Grow / shrink not possible
 
 ***OK: test6.html***
 Grow containers have always layout specifed. Fixed flex % is replaced with css rules.
+
+***OK: test8.html***
+Grow containers have always layout specifed. Fixed flex % is replaced with css rules, same with test6.html but with 3 containers of fixed % height.
+
+***NOT OK: test9.html***
+Grow containers have always layout specifed. Fixed flex % containers are nested and contain fixed flex % containers. The specific thing is that the containers as a specific level do not define the 100% height.
+In this scenario, there are troubles with Safari and Chrome - Safari seems to ignore the specified 50% and takes the full height and Chrome seems to follow exactly what is specified in the css.
+
+***OK: test10.html***
+Fixed flex % containers are nested and contain grow containers that should devide the space equally between them.
