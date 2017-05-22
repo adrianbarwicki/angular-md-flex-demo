@@ -186,8 +186,8 @@ In this scenario, there are troubles with Safari and Chrome - Safari seems to ig
 
 Based on this, we again heuristically propose the following constraint:
 
-***1. The relative heights of the silbling containers must always add up to 100%.*** <br />
-***2. Silbling containers must be always of the same type: `shrink | grow | fixed`.***
+***-The relative heights of the silbling containers must always add up to 100%.*** <br />
+***-Silbling containers must be always of the same type: `shrink | grow | fixed`.***
 
 ***OK: test10.html***
 Fixed flex % containers are nested and contain grow containers that should devide the space equally between them.
@@ -196,7 +196,11 @@ Fixed flex % containers are nested and contain grow containers that should devid
 Fixed flex % containers are nested and contain grow containers that should devide the space equally between them. There are alsoc scrollable.
 
 ***NOT OK: test12.html***
-Scrollable containers do not work with "row" / horizontal containers
+
+Scrollable containers do not work with "row" / "horizontal" containers.<br />
+Based on this, we again heuristically propose the following constraint:
+
+***-Scrollable containers must not contain any contents of "row" / "Horizontal" layout*** <br />
 
 ***OK: test13.html***
 Scrollable containers do work with "column" / vertical containers
