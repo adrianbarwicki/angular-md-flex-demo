@@ -1,10 +1,83 @@
 # angular-md-flex-demo
 ## Solution for Safari vs. other engines
 
+*** Proposal for hybrid approach (responsive and flex combined) ***
 1. Use style="height:x%" for flex="x" in column layouts
 2. Use style="width:x%" for flex="x" in row layouts
-3. Every "grow" container with standalone "flex" attribute should have layout-fill
+3. Shrink containers have flex="noshrink" attribute
+4. Every "grow" container with standalone "flex" attribute should have layout-fill
 
+***Constrains / Best practices***
+
+1. No grow contents in shrink contents
+Don't:
+```
+    <div layout="column">
+        <div layout="column" flex>
+
+        </div>
+    </div>
+```
+
+2. No nested shrink contents
+Don't:
+```
+    <div layout="column">
+        <div layout="column">
+        </div>
+    </div>
+```
+
+2. The relative heights must always add up to 100%.
+Don't:
+```
+    <div layout="column" flex>
+        <div layout="column" style="height: 20%"></div>
+        <div layout="column" style="height: 20%"></div>
+    </div>
+```
+Do:
+```
+    <div layout="column" flex>
+        <div layout="column" style="height: 50%"></div>
+        <div layout="column" style="height: 50%"></div>
+    </div>
+```
+
+3. Shrink containers must not be scrollable
+Don't:
+```
+    <md-content layout="column">
+    </md-content>
+```
+Do:
+```
+    <md-content layout="column" flex>
+    </md-content>
+```
+
+4. Scrollable containers must not contain any contents of "row" / "Horizontal" layout
+Don't:
+```
+    <md-content layout="column">
+         <div layout="row" flex>
+            ...
+         </div>
+          <div layout="row" flex>
+            ...
+          </div>
+    </md-content>
+```
+Do:
+```
+    <md-content layout="column" flex>
+         <div layout="column" flex="noshrink"></div>
+         <div layout="column" flex="noshrink"></div>
+    </md-content>
+    <md-content layout="column" flex>
+         <div layout="column" flex="noshrink"></div>
+    </md-content>
+```
 
 ## Edge cases
 
