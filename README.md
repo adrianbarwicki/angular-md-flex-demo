@@ -99,12 +99,21 @@
 ### NOT OK: test5.html
 Fixed flex containers in fixed flex containers. Their height are based on screen size, not on parent size. Same with test3.html.
 
-***OK: test5-noflex.html***
-We use explicit styles for heights in % and it has the correct behaviaur.
-Minus of this approach: Grow / shrink not possible
+### Partly OK: test5-noflex.html
+We use explicit styles for heights in % and it shows the correct behaviaur.
+Minus of this approach: Grow / shrink not possible.
 
-***OK: test6.html***
-Grow containers have always layout specifed. Fixed flex % is replaced with css rules.
+### OK: test6.html
+Fixed flex % is replaced with css rules.
+
+*** Works across Safari and Chrome browsers. ***
+
+Due to test6.html we ***heuristically*** propose the following:
+
+1. Use style="height:x%" for flex="x" in column layouts
+2. Use style="width:x%" for flex="x" in row layouts
+
+We will use this approch in the following scenarios.
 
 ***OK: test8.html***
 Grow containers have always layout specifed. Fixed flex % is replaced with css rules, same with test6.html but with 3 containers of fixed % height.
@@ -142,4 +151,4 @@ Horizontal containers work well
 Nested Horizontal containers work well
 
 ***OK: test16.html***
-test15 combied with test13
+test15 combined with test13

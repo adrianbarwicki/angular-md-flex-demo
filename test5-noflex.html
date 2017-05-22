@@ -23,13 +23,13 @@
         <!-- GROW VERTICAL CONTAINER - expected 50% -->
         
         <div layout="column" style="height:50%">
-            <div style="height:20%" class="red">
+            <div layout="column" style="height:20%" class="red">
                 <h1>[height="20" in container 50%]</h1>
                 <p>
                     We use explicit styles for heights in % and it has the correct behaviaur,
                 </p>
             </div>
-            <div style="height:80%" class="red">
+            <div layout="column" style="height:80%" class="red">
                 <h1>[height="20" in container 50%]</h1>
             </div>
         </div>
