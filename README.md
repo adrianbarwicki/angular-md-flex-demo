@@ -1,7 +1,7 @@
 # angular-md-flex-demo
 ## Solution for Safari vs. other engines
 
-*** Proposal for hybrid approach (responsive and flex combined) ***
+***Proposal for hybrid approach (responsive and flex combined)***
 1. Use style="height:x%" for flex="x" in column layouts
 2. Use style="width:x%" for flex="x" in row layouts
 3. Shrink containers have flex="noshrink" attribute
