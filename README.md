@@ -87,7 +87,8 @@
     </md-content>
 ```
 
-5. Silbling containers must be always of the same type: `shrink | grow | fixed`
+5. Silbling containers must be always of the same type: `shrink | grow | fixed`.
+
 ***Don't:***
 ```
          <div layout="row" flex>
