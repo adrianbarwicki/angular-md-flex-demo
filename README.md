@@ -10,7 +10,8 @@
 ***Constrains / Best practices***
 
 1. No grow contents in shrink contents
-Don't:
+
+***Don't:***
 ```
     <div layout="column">
         <div layout="column" flex>
@@ -20,7 +21,8 @@ Don't:
 ```
 
 2. No nested shrink contents
-Don't:
+
+***Don't:***
 ```
     <div layout="column">
         <div layout="column">
@@ -29,14 +31,16 @@ Don't:
 ```
 
 2. The relative heights must always add up to 100%.
-Don't:
+
+***Don't:***
 ```
     <div layout="column" flex>
         <div layout="column" style="height: 20%"></div>
         <div layout="column" style="height: 20%"></div>
     </div>
 ```
-Do:
+
+***Do:***
 ```
     <div layout="column" flex>
         <div layout="column" style="height: 50%"></div>
@@ -45,19 +49,22 @@ Do:
 ```
 
 3. Shrink containers must not be scrollable
-Don't:
+
+***Don't:***
 ```
     <md-content layout="column">
     </md-content>
 ```
-Do:
+
+***Do:***
 ```
     <md-content layout="column" flex>
     </md-content>
 ```
 
 4. Scrollable containers must not contain any contents of "row" / "Horizontal" layout
-Don't:
+
+***Don't:***
 ```
     <md-content layout="column">
          <div layout="row" flex>
@@ -68,7 +75,8 @@ Don't:
           </div>
     </md-content>
 ```
-Do:
+
+***Do:***
 ```
     <md-content layout="column" flex>
          <div layout="column" flex="noshrink"></div>
