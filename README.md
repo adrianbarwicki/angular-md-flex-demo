@@ -17,3 +17,6 @@ Fixed flex containers in fixed flex containers. Their height are based on screen
 ***OK: test5-noflex.html***
 We use explicit styles for heights in % and it has the correct behaviaur.
 Minus of this approach: Grow / shrink not possible
+
+***OK: test6.html***
+Grow containers have always layout specifed. Fixed flex % is replaced with css rules.
