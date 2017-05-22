@@ -106,7 +106,7 @@ Minus of this approach: Grow / shrink not possible.
 ### OK: test6.html
 Fixed flex % is replaced with css rules.
 
-*** Works across Safari and Chrome browsers. ***
+***Works across Safari and Chrome browsers.***
 
 Due to test6.html we ***heuristically*** propose the following:
 
