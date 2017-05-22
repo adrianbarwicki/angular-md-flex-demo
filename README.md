@@ -30,3 +30,31 @@ In this scenario, there are troubles with Safari and Chrome - Safari seems to ig
 
 ***OK: test10.html***
 Fixed flex % containers are nested and contain grow containers that should devide the space equally between them.
+
+***OK: test11.html***
+Fixed flex % containers are nested and contain grow containers that should devide the space equally between them. There are alsoc scrollable.
+
+***NOT OK: test12.html***
+Scrollable containers do not work with "row" / horizontal containers
+
+***OK: test13.html***
+Scrollable containers do work with "column" / vertical containers
+Constrain for children of scrollable containers:
+```
+<div layout="column" flex="noshrink" class="red">
+    <h1>[3 Test in shrink container]</h1>
+    <h1>[3 Test in shrink container]</h1>
+    <h1>[3 Test in shrink container]</h1>
+</div>
+```
+* must have the flex="noshrink" property
+* must be of column layout
+
+***OK: test14.html***
+Horizontal containers work well
+
+***OK: test15.html***
+Nested Horizontal containers work well
+
+***OK: test16.html***
+test15 combied with test13
