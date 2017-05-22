@@ -223,3 +223,10 @@ Nested Horizontal containers work well
 
 ***OK: test16.html***
 test15 combined with test13
+
+
+# TODO's:
+
+* Check out if the proposed approach works well with angular material components, such as input, list etc.
+
+* Extend the approach to different screen sizes and screen aligmnets (vertical or horizontal).
