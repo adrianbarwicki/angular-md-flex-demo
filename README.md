@@ -113,6 +113,29 @@ Due to test6.html we ***heuristically*** propose the following:
 1. Use style="height:x%" for flex="x" in column layouts
 2. Use style="width:x%" for flex="x" in row layouts
 
+Example:
+```
+    <!-- INSTAD OF THE FOLLOWING CODE: -->
+    <div layout="column" flex layout-fill> 
+        <div layout="column" flex="20">
+          ...
+        </div>
+        <div layout="column" flex="80">
+           ...
+        </div>
+    </div>
+
+    <!-- WE'LL WRITE: -->
+    <div layout="column" flex layout-fill> 
+        <div layout="column" style="height:20%">
+          ...
+        </div>
+        <div layout="column" style="width:20%">
+           ...
+        </div>
+    </div>
+```
+
 We will use this approch in the following scenarios.
 
 ***OK: test8.html***
