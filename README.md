@@ -87,6 +87,40 @@
     </md-content>
 ```
 
+5. Silbling containers must be always of the same type: `shrink | grow | fixed`
+***Don't:***
+```
+         <div layout="row" flex>
+            ...
+         </div>
+          <div layout="row" style="height:10%;">
+            ...
+          </div>
+
+          <!-- OR -->
+
+         <div layout="row" flex>
+            ...
+         </div>
+          <div layout="row">
+            ...
+          </div>
+```
+
+***Do:***
+```
+    <md-content layout="column" flex>
+         ...
+    </md-content>
+    <md-content layout="column" flex>
+        ...
+    </md-content>
+
+    <!-- OR -->
+    <div layout="column" flex="noshrink">...</div>
+    <div layout="column" flex="noshrink">...</div>
+```
+
 ## Edge cases
 
 ### NOT OK: test3.html
@@ -138,12 +172,21 @@ Example:
 
 We will use this approch in the following scenarios.
 
-***OK: test8.html***
-Grow containers have always layout specifed. Fixed flex % is replaced with css rules, same with test6.html but with 3 containers of fixed % height.
+### OK: test8.html
+We follow up on the ***test6.html***.
+In this example it is seen that the previous proposal also works for nested containers of fixed sizes.
 
 ***NOT OK: test9.html***
-Grow containers have always layout specifed. Fixed flex % containers are nested and contain fixed flex % containers. The specific thing is that the containers as a specific level do not define the 100% height.
+We follow up on the ***test6.html***.
+
+We specify 1 container with height of 50% (or better: not 100%).
+
 In this scenario, there are troubles with Safari and Chrome - Safari seems to ignore the specified 50% and takes the full height and Chrome seems to follow exactly what is specified in the css.
+
+Based on this, we again heuristically propose the following constrain:
+
+***1. The relative heights of the silbling containers must always add up to 100%.***
+***2. Silbling containers must be always of the same type: `shrink | grow | fixed`. ***
 
 ***OK: test10.html***
 Fixed flex % containers are nested and contain grow containers that should devide the space equally between them.
