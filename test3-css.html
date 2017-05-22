@@ -22,21 +22,21 @@
     <div layout="column" flex layout-fill>
         <!-- GROW VERTICAL CONTAINER - expected 50% -->
         
-        <div layout="column" flex layout-fill>
-            <div style="height:20%" class="red">
+        <div layout="column" style="display:flex;" layout-fill>
+            <div style="flex-grow:0.2;" class="red">
                 <h1>[height="20%" in grow container]</h1>
                 <p>
                     Here the 20% are based on the screen height, not the parent container height.
                     We expect however that they will be based on the parent element which takes 50% of the screen size, so 10% of the screen size.
                 </p>
             </div>
-            <div style="height:80%" class="red">
+            <div style="flex-grow:0.8;" class="red">
                 <h1>[height="80%" in grow container]</h1>
             </div>
         </div>
 
         <!-- GROW VERTICAL CONTAINER - expected 50% -->
-        <div layout="column" flex>
+        <div class="blue" layout="column" style="display:flex;"  layout-fill >
                     <h1>[grow]</h1>
         </div>
      </div>
@@ -51,7 +51,18 @@
   
 
   <script type="text/javascript">    
-    angular.module('TestApp', [ 'ngMaterial' ]);
+    angular.module('TestApp', [ 'ngMaterial' ])
+
+    .directive('flexibleWidth', function() {
+        return function(scope, element, attr) {
+
+        // Get parent elmenets width and subtract fixed width
+        element.css({ 
+            width: element.parent()[0].offsetHeight - 400 + 'px' 
+        });
+
+        };
+    });
   </script>
   
 </body>
