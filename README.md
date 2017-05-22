@@ -14,6 +14,6 @@ Fixed flex does not work properly in grow column container. Their height are bas
 ***NOT OK: test5.html***
 Fixed flex containers in fixed flex containers. Their height are based on screen size, not on parent size. Same with test3.html.
 
-***OK: test5-noflex.html ***
+***OK: test5-noflex.html***
 We use explicit styles for heights in % and it has the correct behaviaur.
 Minus of this approach: Grow / shrink not possible
