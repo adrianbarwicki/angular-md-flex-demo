@@ -186,7 +186,7 @@ In this scenario, there are troubles with Safari and Chrome - Safari seems to ig
 
 Based on this, we again heuristically propose the following constrain:
 
-***1. The relative heights of the silbling containers must always add up to 100%.***<br />
+***1. The relative heights of the silbling containers must always add up to 100%.*** <br />
 ***2. Silbling containers must be always of the same type: `shrink | grow | fixed`. ***
 
 ***OK: test10.html***
